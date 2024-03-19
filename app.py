@@ -17,6 +17,19 @@ def bmi_category(bmi):
     else:
         return "Obesity"
 
+
+def example_function():
+    # Replace this with your Python code
+    return "Welcome to BMI Calculator"
+
+@app.route('/')
+def index():
+    # This route will call the Python function and return the result
+    result = example_function()
+    return jsonify({
+        "message": result
+    })
+
 @app.route('/bmi', methods=['GET'])
 def get_bmi():
     # Extracting query parameters
